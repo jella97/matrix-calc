@@ -18,6 +18,7 @@
 		635F7A4516D8A7D50065017B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 635F7A4416D8A7D50065017B /* Default-568h@2x.png */; };
 		635F7A4816D8A7D50065017B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635F7A4616D8A7D50065017B /* MainStoryboard.storyboard */; };
 		635F7A4B16D8A7D50065017B /* MatrixViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635F7A4A16D8A7D50065017B /* MatrixViewController.m */; };
+		63DC234316D8AFF800A3FF1F /* Matrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DC234216D8AFF800A3FF1F /* Matrix.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		635F7A4716D8A7D50065017B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		635F7A4916D8A7D50065017B /* MatrixViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatrixViewController.h; sourceTree = "<group>"; };
 		635F7A4A16D8A7D50065017B /* MatrixViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatrixViewController.m; sourceTree = "<group>"; };
+		63DC234116D8AFF800A3FF1F /* Matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix.h; sourceTree = "<group>"; };
+		63DC234216D8AFF800A3FF1F /* Matrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Matrix.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 				635F7A4616D8A7D50065017B /* MainStoryboard.storyboard */,
 				635F7A4916D8A7D50065017B /* MatrixViewController.h */,
 				635F7A4A16D8A7D50065017B /* MatrixViewController.m */,
+				63DC234116D8AFF800A3FF1F /* Matrix.h */,
+				63DC234216D8AFF800A3FF1F /* Matrix.m */,
 				635F7A3516D8A7D40065017B /* Supporting Files */,
 			);
 			path = MatrixCalc;
@@ -177,6 +182,7 @@
 				635F7A3B16D8A7D40065017B /* main.m in Sources */,
 				635F7A3F16D8A7D40065017B /* MatrixAppDelegate.m in Sources */,
 				635F7A4B16D8A7D50065017B /* MatrixViewController.m in Sources */,
+				63DC234316D8AFF800A3FF1F /* Matrix.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +305,7 @@
 				635F7A5016D8A7D50065017B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MatrixViewController : UIViewController
+@interface MatrixViewController : UIViewController <UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UILabel *matrixSize;
+@property (assign, nonatomic) unsigned int matrixRow;
+@property (assign, nonatomic) unsigned int matrixColumn;
+@property (strong, nonatomic) NSMutableArray *matrixRowFields;
+@property (strong, nonatomic) NSMutableArray *matrixRows;
+@property (weak, nonatomic) IBOutlet UITextField *matrix11;
+
+// close keyboard
+- (BOOL)textFieldShouldReturn:(UITextField *)textField;
+
+- (void)drawFields:(unsigned int)row columnCount:(unsigned int)column;
 
 @end
