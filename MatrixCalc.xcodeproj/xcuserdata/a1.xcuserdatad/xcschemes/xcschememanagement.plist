@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>MatrixCalc.xcscheme</key>
+		<key>matrixcalc.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>635F7A2A16D8A7D40065017B</key>
+		<key>63A66AC216DA19E9000D021C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

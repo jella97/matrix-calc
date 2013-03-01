@@ -10,16 +10,24 @@
 
 @interface MatrixViewController : UIViewController <UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *matrixSize;
-@property (assign, nonatomic) unsigned int matrixRow;
-@property (assign, nonatomic) unsigned int matrixColumn;
-@property (strong, nonatomic) NSMutableArray *matrixRowFields;
-@property (strong, nonatomic) NSMutableArray *matrixRows;
-@property (weak, nonatomic) IBOutlet UITextField *matrix11;
+@property (weak, nonatomic) IBOutlet UILabel *labelMatrixSize;
+
+@property (assign, nonatomic) int matrixSize;
+@property (weak, nonatomic) IBOutlet UITextField *onePointOneOfMatrixA;
+@property (weak, nonatomic) IBOutlet UITextField *onePointOneOfMatrixB;
+@property (weak, nonatomic) IBOutlet UITextField *onePointOneOfMatrixResult;
+
+
+// NSMutableArray<NSMutableArray>
+@property (strong, nonatomic) NSMutableArray *rowsOfAllMatrix;
+
+// when begin editing in one of textField, keep withch is
+@property (weak, nonatomic) UITextField *textFieldBeginEditing;
 
 // close keyboard
 - (BOOL)textFieldShouldReturn:(UITextField *)textField;
+- (IBAction)matrixSizeChanged:(UIStepper *)sender;
 
-- (void)drawFields:(unsigned int)row columnCount:(unsigned int)column;
+- (void)drawFields;
 
 @end

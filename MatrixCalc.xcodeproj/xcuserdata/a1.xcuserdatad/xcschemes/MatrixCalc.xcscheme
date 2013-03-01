@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "635F7A2A16D8A7D40065017B"
-               BuildableName = "MatrixCalc.app"
-               BlueprintName = "MatrixCalc"
-               ReferencedContainer = "container:MatrixCalc.xcodeproj">
+               BlueprintIdentifier = "63A66AC216DA19E9000D021C"
+               BuildableName = "matrixcalc.app"
+               BlueprintName = "matrixcalc"
+               ReferencedContainer = "container:matrixcalc.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "635F7A2A16D8A7D40065017B"
-            BuildableName = "MatrixCalc.app"
-            BlueprintName = "MatrixCalc"
-            ReferencedContainer = "container:MatrixCalc.xcodeproj">
+            BlueprintIdentifier = "63A66AC216DA19E9000D021C"
+            BuildableName = "matrixcalc.app"
+            BlueprintName = "matrixcalc"
+            ReferencedContainer = "container:matrixcalc.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -51,10 +51,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "635F7A2A16D8A7D40065017B"
-            BuildableName = "MatrixCalc.app"
-            BlueprintName = "MatrixCalc"
-            ReferencedContainer = "container:MatrixCalc.xcodeproj">
+            BlueprintIdentifier = "63A66AC216DA19E9000D021C"
+            BuildableName = "matrixcalc.app"
+            BlueprintName = "matrixcalc"
+            ReferencedContainer = "container:matrixcalc.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -69,10 +69,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "635F7A2A16D8A7D40065017B"
-            BuildableName = "MatrixCalc.app"
-            BlueprintName = "MatrixCalc"
-            ReferencedContainer = "container:MatrixCalc.xcodeproj">
+            BlueprintIdentifier = "63A66AC216DA19E9000D021C"
+            BuildableName = "matrixcalc.app"
+            BlueprintName = "matrixcalc"
+            ReferencedContainer = "container:matrixcalc.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

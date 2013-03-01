@@ -7,107 +7,102 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		635F7A2F16D8A7D40065017B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635F7A2E16D8A7D40065017B /* UIKit.framework */; };
-		635F7A3116D8A7D40065017B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635F7A3016D8A7D40065017B /* Foundation.framework */; };
-		635F7A3316D8A7D40065017B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635F7A3216D8A7D40065017B /* CoreGraphics.framework */; };
-		635F7A3916D8A7D40065017B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 635F7A3716D8A7D40065017B /* InfoPlist.strings */; };
-		635F7A3B16D8A7D40065017B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 635F7A3A16D8A7D40065017B /* main.m */; };
-		635F7A3F16D8A7D40065017B /* MatrixAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 635F7A3E16D8A7D40065017B /* MatrixAppDelegate.m */; };
-		635F7A4116D8A7D50065017B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 635F7A4016D8A7D50065017B /* Default.png */; };
-		635F7A4316D8A7D50065017B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 635F7A4216D8A7D50065017B /* Default@2x.png */; };
-		635F7A4516D8A7D50065017B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 635F7A4416D8A7D50065017B /* Default-568h@2x.png */; };
-		635F7A4816D8A7D50065017B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635F7A4616D8A7D50065017B /* MainStoryboard.storyboard */; };
-		635F7A4B16D8A7D50065017B /* MatrixViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635F7A4A16D8A7D50065017B /* MatrixViewController.m */; };
-		63DC234316D8AFF800A3FF1F /* Matrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DC234216D8AFF800A3FF1F /* Matrix.m */; };
+		63A66AC716DA19E9000D021C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A66AC616DA19E9000D021C /* UIKit.framework */; };
+		63A66AC916DA19E9000D021C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A66AC816DA19E9000D021C /* Foundation.framework */; };
+		63A66ACB16DA19E9000D021C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63A66ACA16DA19E9000D021C /* CoreGraphics.framework */; };
+		63A66AD116DA19E9000D021C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 63A66ACF16DA19E9000D021C /* InfoPlist.strings */; };
+		63A66AD316DA19E9000D021C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A66AD216DA19E9000D021C /* main.m */; };
+		63A66AD716DA19E9000D021C /* MatrixAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A66AD616DA19E9000D021C /* MatrixAppDelegate.m */; };
+		63A66AD916DA19E9000D021C /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 63A66AD816DA19E9000D021C /* Default.png */; };
+		63A66ADB16DA19E9000D021C /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63A66ADA16DA19E9000D021C /* Default@2x.png */; };
+		63A66ADD16DA19E9000D021C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63A66ADC16DA19E9000D021C /* Default-568h@2x.png */; };
+		63A66AE016DA19E9000D021C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63A66ADE16DA19E9000D021C /* MainStoryboard.storyboard */; };
+		63A66AE316DA19E9000D021C /* MatrixViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A66AE216DA19E9000D021C /* MatrixViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		635F7A2B16D8A7D40065017B /* MatrixCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatrixCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		635F7A2E16D8A7D40065017B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		635F7A3016D8A7D40065017B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		635F7A3216D8A7D40065017B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		635F7A3616D8A7D40065017B /* MatrixCalc-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MatrixCalc-Info.plist"; sourceTree = "<group>"; };
-		635F7A3816D8A7D40065017B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		635F7A3A16D8A7D40065017B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		635F7A3C16D8A7D40065017B /* MatrixCalc-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MatrixCalc-Prefix.pch"; sourceTree = "<group>"; };
-		635F7A3D16D8A7D40065017B /* MatrixAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatrixAppDelegate.h; sourceTree = "<group>"; };
-		635F7A3E16D8A7D40065017B /* MatrixAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatrixAppDelegate.m; sourceTree = "<group>"; };
-		635F7A4016D8A7D50065017B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		635F7A4216D8A7D50065017B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		635F7A4416D8A7D50065017B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		635F7A4716D8A7D50065017B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		635F7A4916D8A7D50065017B /* MatrixViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatrixViewController.h; sourceTree = "<group>"; };
-		635F7A4A16D8A7D50065017B /* MatrixViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatrixViewController.m; sourceTree = "<group>"; };
-		63DC234116D8AFF800A3FF1F /* Matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix.h; sourceTree = "<group>"; };
-		63DC234216D8AFF800A3FF1F /* Matrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Matrix.m; sourceTree = "<group>"; };
+		63A66AC316DA19E9000D021C /* matrixcalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = matrixcalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		63A66AC616DA19E9000D021C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		63A66AC816DA19E9000D021C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		63A66ACA16DA19E9000D021C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		63A66ACE16DA19E9000D021C /* matrixcalc-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "matrixcalc-Info.plist"; sourceTree = "<group>"; };
+		63A66AD016DA19E9000D021C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		63A66AD216DA19E9000D021C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		63A66AD416DA19E9000D021C /* matrixcalc-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "matrixcalc-Prefix.pch"; sourceTree = "<group>"; };
+		63A66AD516DA19E9000D021C /* MatrixAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatrixAppDelegate.h; sourceTree = "<group>"; };
+		63A66AD616DA19E9000D021C /* MatrixAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatrixAppDelegate.m; sourceTree = "<group>"; };
+		63A66AD816DA19E9000D021C /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		63A66ADA16DA19E9000D021C /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		63A66ADC16DA19E9000D021C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		63A66ADF16DA19E9000D021C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		63A66AE116DA19E9000D021C /* MatrixViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MatrixViewController.h; sourceTree = "<group>"; };
+		63A66AE216DA19E9000D021C /* MatrixViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatrixViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		635F7A2816D8A7D40065017B /* Frameworks */ = {
+		63A66AC016DA19E9000D021C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				635F7A2F16D8A7D40065017B /* UIKit.framework in Frameworks */,
-				635F7A3116D8A7D40065017B /* Foundation.framework in Frameworks */,
-				635F7A3316D8A7D40065017B /* CoreGraphics.framework in Frameworks */,
+				63A66AC716DA19E9000D021C /* UIKit.framework in Frameworks */,
+				63A66AC916DA19E9000D021C /* Foundation.framework in Frameworks */,
+				63A66ACB16DA19E9000D021C /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		635F7A2216D8A7D40065017B = {
+		63A66ABA16DA19E9000D021C = {
 			isa = PBXGroup;
 			children = (
-				635F7A3416D8A7D40065017B /* MatrixCalc */,
-				635F7A2D16D8A7D40065017B /* Frameworks */,
-				635F7A2C16D8A7D40065017B /* Products */,
+				63A66ACC16DA19E9000D021C /* matrixcalc */,
+				63A66AC516DA19E9000D021C /* Frameworks */,
+				63A66AC416DA19E9000D021C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		635F7A2C16D8A7D40065017B /* Products */ = {
+		63A66AC416DA19E9000D021C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				635F7A2B16D8A7D40065017B /* MatrixCalc.app */,
+				63A66AC316DA19E9000D021C /* matrixcalc.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		635F7A2D16D8A7D40065017B /* Frameworks */ = {
+		63A66AC516DA19E9000D021C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				635F7A2E16D8A7D40065017B /* UIKit.framework */,
-				635F7A3016D8A7D40065017B /* Foundation.framework */,
-				635F7A3216D8A7D40065017B /* CoreGraphics.framework */,
+				63A66AC616DA19E9000D021C /* UIKit.framework */,
+				63A66AC816DA19E9000D021C /* Foundation.framework */,
+				63A66ACA16DA19E9000D021C /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		635F7A3416D8A7D40065017B /* MatrixCalc */ = {
+		63A66ACC16DA19E9000D021C /* matrixcalc */ = {
 			isa = PBXGroup;
 			children = (
-				635F7A3D16D8A7D40065017B /* MatrixAppDelegate.h */,
-				635F7A3E16D8A7D40065017B /* MatrixAppDelegate.m */,
-				635F7A4616D8A7D50065017B /* MainStoryboard.storyboard */,
-				635F7A4916D8A7D50065017B /* MatrixViewController.h */,
-				635F7A4A16D8A7D50065017B /* MatrixViewController.m */,
-				63DC234116D8AFF800A3FF1F /* Matrix.h */,
-				63DC234216D8AFF800A3FF1F /* Matrix.m */,
-				635F7A3516D8A7D40065017B /* Supporting Files */,
+				63A66AD516DA19E9000D021C /* MatrixAppDelegate.h */,
+				63A66AD616DA19E9000D021C /* MatrixAppDelegate.m */,
+				63A66ADE16DA19E9000D021C /* MainStoryboard.storyboard */,
+				63A66AE116DA19E9000D021C /* MatrixViewController.h */,
+				63A66AE216DA19E9000D021C /* MatrixViewController.m */,
+				63A66ACD16DA19E9000D021C /* Supporting Files */,
 			);
-			path = MatrixCalc;
+			path = matrixcalc;
 			sourceTree = "<group>";
 		};
-		635F7A3516D8A7D40065017B /* Supporting Files */ = {
+		63A66ACD16DA19E9000D021C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				635F7A3616D8A7D40065017B /* MatrixCalc-Info.plist */,
-				635F7A3716D8A7D40065017B /* InfoPlist.strings */,
-				635F7A3A16D8A7D40065017B /* main.m */,
-				635F7A3C16D8A7D40065017B /* MatrixCalc-Prefix.pch */,
-				635F7A4016D8A7D50065017B /* Default.png */,
-				635F7A4216D8A7D50065017B /* Default@2x.png */,
-				635F7A4416D8A7D50065017B /* Default-568h@2x.png */,
+				63A66ACE16DA19E9000D021C /* matrixcalc-Info.plist */,
+				63A66ACF16DA19E9000D021C /* InfoPlist.strings */,
+				63A66AD216DA19E9000D021C /* main.m */,
+				63A66AD416DA19E9000D021C /* matrixcalc-Prefix.pch */,
+				63A66AD816DA19E9000D021C /* Default.png */,
+				63A66ADA16DA19E9000D021C /* Default@2x.png */,
+				63A66ADC16DA19E9000D021C /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -115,92 +110,91 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		635F7A2A16D8A7D40065017B /* MatrixCalc */ = {
+		63A66AC216DA19E9000D021C /* matrixcalc */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 635F7A4E16D8A7D50065017B /* Build configuration list for PBXNativeTarget "MatrixCalc" */;
+			buildConfigurationList = 63A66AE616DA19E9000D021C /* Build configuration list for PBXNativeTarget "matrixcalc" */;
 			buildPhases = (
-				635F7A2716D8A7D40065017B /* Sources */,
-				635F7A2816D8A7D40065017B /* Frameworks */,
-				635F7A2916D8A7D40065017B /* Resources */,
+				63A66ABF16DA19E9000D021C /* Sources */,
+				63A66AC016DA19E9000D021C /* Frameworks */,
+				63A66AC116DA19E9000D021C /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = MatrixCalc;
-			productName = MatrixCalc;
-			productReference = 635F7A2B16D8A7D40065017B /* MatrixCalc.app */;
+			name = matrixcalc;
+			productName = matrixcalc;
+			productReference = 63A66AC316DA19E9000D021C /* matrixcalc.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		635F7A2316D8A7D40065017B /* Project object */ = {
+		63A66ABB16DA19E9000D021C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = Matrix;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = a1;
 			};
-			buildConfigurationList = 635F7A2616D8A7D40065017B /* Build configuration list for PBXProject "MatrixCalc" */;
+			buildConfigurationList = 63A66ABE16DA19E9000D021C /* Build configuration list for PBXProject "matrixcalc" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 635F7A2216D8A7D40065017B;
-			productRefGroup = 635F7A2C16D8A7D40065017B /* Products */;
+			mainGroup = 63A66ABA16DA19E9000D021C;
+			productRefGroup = 63A66AC416DA19E9000D021C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				635F7A2A16D8A7D40065017B /* MatrixCalc */,
+				63A66AC216DA19E9000D021C /* matrixcalc */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		635F7A2916D8A7D40065017B /* Resources */ = {
+		63A66AC116DA19E9000D021C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				635F7A3916D8A7D40065017B /* InfoPlist.strings in Resources */,
-				635F7A4116D8A7D50065017B /* Default.png in Resources */,
-				635F7A4316D8A7D50065017B /* Default@2x.png in Resources */,
-				635F7A4516D8A7D50065017B /* Default-568h@2x.png in Resources */,
-				635F7A4816D8A7D50065017B /* MainStoryboard.storyboard in Resources */,
+				63A66AD116DA19E9000D021C /* InfoPlist.strings in Resources */,
+				63A66AD916DA19E9000D021C /* Default.png in Resources */,
+				63A66ADB16DA19E9000D021C /* Default@2x.png in Resources */,
+				63A66ADD16DA19E9000D021C /* Default-568h@2x.png in Resources */,
+				63A66AE016DA19E9000D021C /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		635F7A2716D8A7D40065017B /* Sources */ = {
+		63A66ABF16DA19E9000D021C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				635F7A3B16D8A7D40065017B /* main.m in Sources */,
-				635F7A3F16D8A7D40065017B /* MatrixAppDelegate.m in Sources */,
-				635F7A4B16D8A7D50065017B /* MatrixViewController.m in Sources */,
-				63DC234316D8AFF800A3FF1F /* Matrix.m in Sources */,
+				63A66AD316DA19E9000D021C /* main.m in Sources */,
+				63A66AD716DA19E9000D021C /* MatrixAppDelegate.m in Sources */,
+				63A66AE316DA19E9000D021C /* MatrixViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		635F7A3716D8A7D40065017B /* InfoPlist.strings */ = {
+		63A66ACF16DA19E9000D021C /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				635F7A3816D8A7D40065017B /* en */,
+				63A66AD016DA19E9000D021C /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		635F7A4616D8A7D50065017B /* MainStoryboard.storyboard */ = {
+		63A66ADE16DA19E9000D021C /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				635F7A4716D8A7D50065017B /* en */,
+				63A66ADF16DA19E9000D021C /* en */,
 			);
 			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
@@ -208,7 +202,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		635F7A4C16D8A7D50065017B /* Debug */ = {
+		63A66AE416DA19E9000D021C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -239,7 +233,7 @@
 			};
 			name = Debug;
 		};
-		635F7A4D16D8A7D50065017B /* Release */ = {
+		63A66AE516DA19E9000D021C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -264,23 +258,23 @@
 			};
 			name = Release;
 		};
-		635F7A4F16D8A7D50065017B /* Debug */ = {
+		63A66AE716DA19E9000D021C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MatrixCalc/MatrixCalc-Prefix.pch";
-				INFOPLIST_FILE = "MatrixCalc/MatrixCalc-Info.plist";
+				GCC_PREFIX_HEADER = "matrixcalc/matrixcalc-Prefix.pch";
+				INFOPLIST_FILE = "matrixcalc/matrixcalc-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
-		635F7A5016D8A7D50065017B /* Release */ = {
+		63A66AE816DA19E9000D021C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MatrixCalc/MatrixCalc-Prefix.pch";
-				INFOPLIST_FILE = "MatrixCalc/MatrixCalc-Info.plist";
+				GCC_PREFIX_HEADER = "matrixcalc/matrixcalc-Prefix.pch";
+				INFOPLIST_FILE = "matrixcalc/matrixcalc-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -289,25 +283,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		635F7A2616D8A7D40065017B /* Build configuration list for PBXProject "MatrixCalc" */ = {
+		63A66ABE16DA19E9000D021C /* Build configuration list for PBXProject "matrixcalc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				635F7A4C16D8A7D50065017B /* Debug */,
-				635F7A4D16D8A7D50065017B /* Release */,
+				63A66AE416DA19E9000D021C /* Debug */,
+				63A66AE516DA19E9000D021C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		635F7A4E16D8A7D50065017B /* Build configuration list for PBXNativeTarget "MatrixCalc" */ = {
+		63A66AE616DA19E9000D021C /* Build configuration list for PBXNativeTarget "matrixcalc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				635F7A4F16D8A7D50065017B /* Debug */,
-				635F7A5016D8A7D50065017B /* Release */,
+				63A66AE716DA19E9000D021C /* Debug */,
+				63A66AE816DA19E9000D021C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 635F7A2316D8A7D40065017B /* Project object */;
+	rootObject = 63A66ABB16DA19E9000D021C /* Project object */;
 }
