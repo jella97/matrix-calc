@@ -10,10 +10,17 @@
 
 @interface MatrixViewController ()
 
-
 @end
 
 @implementation MatrixViewController
+
+enum MATRIX_OPERATION {
+    OPERATION_ADD = 0,
+    OPERATION_SUB,
+    OPERATION_MUL,
+    OPERATION_INV
+};
+
 
 @synthesize matrixSize = _matrixSize;
 
@@ -24,7 +31,7 @@
     
 
     // init the matrix size with 1
-    self.matrixSize = 1;
+    self.matrixSize = 3;
 
     [self labelMatrixSize].text = [[NSString alloc] initWithFormat:@"Matrix Size: %d X %d", self.matrixSize, self.matrixSize];
     
@@ -34,6 +41,14 @@
     self.onePointOneOfMatrixA.hidden = YES;
     self.onePointOneOfMatrixB.hidden = YES;
     self.onePointOneOfMatrixResult.hidden = YES;
+    
+    
+    // init the segmented control options
+    [self.segmentedControl removeAllSegments];
+    [self.segmentedControl insertSegmentWithTitle:@"+" atIndex:OPERATION_ADD animated:YES];
+    [self.segmentedControl insertSegmentWithTitle:@"-" atIndex:OPERATION_SUB animated:YES];
+    [self.segmentedControl insertSegmentWithTitle:@"*" atIndex:OPERATION_MUL animated:YES];
+    [self.segmentedControl insertSegmentWithTitle:@"Inv(A)" atIndex:OPERATION_INV animated:YES];
     
     
     [self drawFields];
@@ -120,14 +135,16 @@
     
     
     // generate matrix A
-    CGRect frameOfMatrixA11 = CGRectMake(5, 60, 30, 30);
+    CGRect frameOfMatrixA11 = CGRectMake(5, 44, 55, 30);
     [self drawMatrixFields:&frameOfMatrixA11];
     
-    CGRect frameOfMatrixB11 = CGRectMake(163, 60, 30, 30);
+    CGRect frameOfMatrixB11 = CGRectMake(5, 200, 55, 30);
     [self drawMatrixFields:&frameOfMatrixB11];
 
-    CGRect frameOfMatrixResult11 = CGRectMake(85, 369, 30, 30);
+    /*
+    CGRect frameOfMatrixResult11 = CGRectMake(5, 369, 30, 30);
     [self drawMatrixFields:&frameOfMatrixResult11];
+     */
 }
 
 
@@ -154,5 +171,31 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+/*
+ dispatch operations
+ */
+- (IBAction)calculate:(UIButton *)sender {
+    
+    switch (self.segmentedControl.selectedSegmentIndex) {
+        case OPERATION_ADD:
+            break;
+        case OPERATION_SUB:
+            break;
+        case OPERATION_MUL:
+            break;
+        case OPERATION_INV:
+            break;
+            
+        default:
+            break;
+    }
+}
+
+- (IBAction)reset:(UIButton *)sender {
+    // I told the value changed..it wasn't.
+    [self matrixSizeChanged: self.stepper];
+}
+
 
 @end
