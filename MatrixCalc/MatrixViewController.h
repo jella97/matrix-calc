@@ -41,9 +41,4 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
 
-- (NSMutableArray *)operationAdd;
-- (NSMutableArray *)operationSub;
-- (NSMutableArray *)operationMul;
-- (NSMutableArray *)operationInv;
-
 @end

@@ -1,0 +1,245 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6301494C16E362DC007FCB8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6301494B16E362DC007FCB8A /* Foundation.framework */; };
+		6301495B16E36337007FCB8A /* NMatrix.c in Sources */ = {isa = PBXBuildFile; fileRef = 6301495916E36337007FCB8A /* NMatrix.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6301494616E362DC007FCB8A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		6301494816E362DC007FCB8A /* libNMatrix.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNMatrix.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6301494B16E362DC007FCB8A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6301494F16E362DC007FCB8A /* NMatrix-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NMatrix-Prefix.pch"; sourceTree = "<group>"; };
+		6301495916E36337007FCB8A /* NMatrix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NMatrix.c; sourceTree = "<group>"; };
+		6301495A16E36337007FCB8A /* NMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMatrix.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6301494516E362DC007FCB8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6301494C16E362DC007FCB8A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6301493F16E362DC007FCB8A = {
+			isa = PBXGroup;
+			children = (
+				6301494D16E362DC007FCB8A /* NMatrix */,
+				6301494A16E362DC007FCB8A /* Frameworks */,
+				6301494916E362DC007FCB8A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6301494916E362DC007FCB8A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6301494816E362DC007FCB8A /* libNMatrix.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6301494A16E362DC007FCB8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6301494B16E362DC007FCB8A /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6301494D16E362DC007FCB8A /* NMatrix */ = {
+			isa = PBXGroup;
+			children = (
+				6301495A16E36337007FCB8A /* NMatrix.h */,
+				6301495916E36337007FCB8A /* NMatrix.c */,
+				6301494E16E362DC007FCB8A /* Supporting Files */,
+			);
+			path = NMatrix;
+			sourceTree = "<group>";
+		};
+		6301494E16E362DC007FCB8A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6301494F16E362DC007FCB8A /* NMatrix-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6301494716E362DC007FCB8A /* NMatrix */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6301495616E362DC007FCB8A /* Build configuration list for PBXNativeTarget "NMatrix" */;
+			buildPhases = (
+				6301494416E362DC007FCB8A /* Sources */,
+				6301494516E362DC007FCB8A /* Frameworks */,
+				6301494616E362DC007FCB8A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NMatrix;
+			productName = NMatrix;
+			productReference = 6301494816E362DC007FCB8A /* libNMatrix.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6301494016E362DC007FCB8A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = a1;
+			};
+			buildConfigurationList = 6301494316E362DC007FCB8A /* Build configuration list for PBXProject "NMatrix" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6301493F16E362DC007FCB8A;
+			productRefGroup = 6301494916E362DC007FCB8A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6301494716E362DC007FCB8A /* NMatrix */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6301494416E362DC007FCB8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6301495B16E36337007FCB8A /* NMatrix.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6301495416E362DC007FCB8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6301495516E362DC007FCB8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6301495716E362DC007FCB8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/NMatrix.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NMatrix/NMatrix-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6301495816E362DC007FCB8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/NMatrix.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NMatrix/NMatrix-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6301494316E362DC007FCB8A /* Build configuration list for PBXProject "NMatrix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6301495416E362DC007FCB8A /* Debug */,
+				6301495516E362DC007FCB8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6301495616E362DC007FCB8A /* Build configuration list for PBXNativeTarget "NMatrix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6301495716E362DC007FCB8A /* Debug */,
+				6301495816E362DC007FCB8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6301494016E362DC007FCB8A /* Project object */;
+}

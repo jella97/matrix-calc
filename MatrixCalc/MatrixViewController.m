@@ -142,6 +142,9 @@ enum MATRIX_OPERATION {
             newFrame.origin.x = pRect->origin.x;
             newFrame.origin.x += x * pRect->size.width;
             
+            // change keyboard style
+            newTextField.returnKeyType = UIReturnKeyDone;
+            newTextField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
             
             [newTextField setFrame:newFrame];
             [newTextField setBorderStyle:UITextBorderStyleRoundedRect];
@@ -228,10 +231,9 @@ enum MATRIX_OPERATION {
     
     NMatrix *matrixA = NULL;
     NMatrix *matrixB = NULL;
-    int matrixSize = self.matrixSize;
     
-    matrixA = NMatrix_Create(matrixSize, matrixSize);
-    matrixB = NMatrix_Create(matrixSize, matrixSize);
+    matrixA = NMatrix_Create(self.matrixSize, self.matrixSize);
+    matrixB = NMatrix_Create(self.matrixSize, self.matrixSize);
     
     for (int i = 0; i < self.matrixSize; ++i) {
         for (int j = 0; j < self.matrixSize; ++j) {
@@ -250,24 +252,31 @@ enum MATRIX_OPERATION {
     }
     
     switch (self.segmentedControl.selectedSegmentIndex) {
-        case OPERATION_ADD:
             
+        case OPERATION_ADD:
             resultView.resultMatrix = NMatrix_Sum(matrixA, matrixB);
             break;
-        case OPERATION_SUB:
             
-
+        case OPERATION_SUB:
+            resultView.resultMatrix =
+                NMatrix_Sum(matrixA, NMatrix_MultiplyWithScalar(matrixB, -1));
             break;
+            
         case OPERATION_MUL:
-            [self operationMul];
+            resultView.resultMatrix = NMatrix_Product(matrixA, matrixB);
             break;
+            
         case OPERATION_INV:
+            resultView.resultMatrix = NMatrix_Inverse(matrixA);
             break;
             
         default:
             break;
     }
     
+    // free memory
+    NMatrix_Destroy(matrixA);
+    NMatrix_Destroy(matrixB);
     [self presentViewController:resultView animated:YES completion:nil];
 }
 
