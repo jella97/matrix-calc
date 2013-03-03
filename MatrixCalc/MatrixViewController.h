@@ -12,7 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *labelMatrixSize;
 
-@property (assign, nonatomic) int matrixSize;
+@property (assign, nonatomic) unsigned int matrixSize;
+
 // connect to the UIStepper, and keep the matrix size.
 @property (weak, nonatomic) IBOutlet UIStepper *stepper;
 
@@ -38,5 +39,11 @@
 - (IBAction)calculate:(UIButton *)sender;
 - (IBAction)reset:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+
+
+- (NSMutableArray *)operationAdd;
+- (NSMutableArray *)operationSub;
+- (NSMutableArray *)operationMul;
+- (NSMutableArray *)operationInv;
 
 @end

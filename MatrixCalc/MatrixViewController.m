@@ -7,6 +7,9 @@
 //
 
 #import "MatrixViewController.h"
+#import "ResultViewController.h"
+
+#include "NMatrix.h"
 
 @interface MatrixViewController ()
 
@@ -20,6 +23,9 @@ enum MATRIX_OPERATION {
     OPERATION_MUL,
     OPERATION_INV
 };
+
+#define MATRIX_A_INDEX 0
+#define MATRIX_B_INDEX 1
 
 
 @synthesize matrixSize = _matrixSize;
@@ -49,11 +55,35 @@ enum MATRIX_OPERATION {
     [self.segmentedControl insertSegmentWithTitle:@"-" atIndex:OPERATION_SUB animated:YES];
     [self.segmentedControl insertSegmentWithTitle:@"*" atIndex:OPERATION_MUL animated:YES];
     [self.segmentedControl insertSegmentWithTitle:@"Inv(A)" atIndex:OPERATION_INV animated:YES];
+    // operation add default selected
+    [self.segmentedControl setSelectedSegmentIndex:OPERATION_ADD];
     
     
+    // add observer to catch the keyboard hide notification
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
+     
     [self drawFields];
 }
 
+- (void)keyboardDidHide:(NSNotification *)notification
+{
+    // if it moved, restore it
+    if (self.view.frame.origin.y != 20) {
+        
+        [UIView beginAnimations:@"RestoreViewSize" context:nil];
+        [UIView setAnimationDuration:0.3f];
+        
+        CGRect frame = self.view.frame;
+        frame.origin.y += 216;
+        [self.view setFrame:frame];
+        
+        [UIView commitAnimations];
+    }
+}
+
+/*
+ when press return key, cancel first responser
+ */
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     NSLog(@"text field return ");
@@ -135,10 +165,10 @@ enum MATRIX_OPERATION {
     
     
     // generate matrix A
-    CGRect frameOfMatrixA11 = CGRectMake(5, 44, 55, 30);
+    CGRect frameOfMatrixA11 = CGRectMake(5, 94, 55, 30);
     [self drawMatrixFields:&frameOfMatrixA11];
     
-    CGRect frameOfMatrixB11 = CGRectMake(5, 200, 55, 30);
+    CGRect frameOfMatrixB11 = CGRectMake(5, 250, 55, 30);
     [self drawMatrixFields:&frameOfMatrixB11];
 
     /*
@@ -155,11 +185,27 @@ enum MATRIX_OPERATION {
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     self.textFieldBeginEditing = textField;
+    
+    int heightOfTextField = [self.view frame].size.height - textField.frame.origin.y - textField.frame.size.height;
+    
+    // it will hide the field & it doesn't moved
+    if (heightOfTextField < 216 &&
+        self.view.frame.origin.y == 20)
+    {
+        [UIView beginAnimations:@"ViewResize" context:nil];
+        [UIView setAnimationDuration:0.3f];
+        
+        CGRect frame = [self.view frame];
+        frame.origin.y -= 216;
+        [self.view setFrame:frame];
+        
+        [UIView commitAnimations];
+    }
 }
 
 /*
- for cancling virtual keyboard.
- when touch the white area, cancle the first responser of textfield.
+ for canceling virtual keyboard.
+ when touch the white area, cancel the first responser of textfield.
  */
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -177,12 +223,43 @@ enum MATRIX_OPERATION {
  */
 - (IBAction)calculate:(UIButton *)sender {
     
+    ResultViewController *resultView = [self.storyboard  instantiateViewControllerWithIdentifier:@"ResultView"];
+    
+    
+    NMatrix *matrixA = NULL;
+    NMatrix *matrixB = NULL;
+    int matrixSize = self.matrixSize;
+    
+    matrixA = NMatrix_Create(matrixSize, matrixSize);
+    matrixB = NMatrix_Create(matrixSize, matrixSize);
+    
+    for (int i = 0; i < self.matrixSize; ++i) {
+        for (int j = 0; j < self.matrixSize; ++j) {
+            // one row operation
+            // value of matrix A
+            UITextField *textFieldA =
+            [[self.rowsOfAllMatrix objectAtIndex:(i + MATRIX_A_INDEX * self.matrixSize)]objectAtIndex:j];
+            matrixA->data[i][j] = [[textFieldA text] intValue];
+            
+            // value of matrix B
+            UITextField *textFieldB =
+            [[self.rowsOfAllMatrix objectAtIndex:(i + MATRIX_B_INDEX * self.matrixSize)] objectAtIndex:j];
+            matrixB->data[i][j] = [[textFieldB text] intValue];
+            
+        }
+    }
+    
     switch (self.segmentedControl.selectedSegmentIndex) {
         case OPERATION_ADD:
+            
+            resultView.resultMatrix = NMatrix_Sum(matrixA, matrixB);
             break;
         case OPERATION_SUB:
+            
+
             break;
         case OPERATION_MUL:
+            [self operationMul];
             break;
         case OPERATION_INV:
             break;
@@ -190,12 +267,80 @@ enum MATRIX_OPERATION {
         default:
             break;
     }
+    
+    [self presentViewController:resultView animated:YES completion:nil];
 }
+
+
+
+/*
+
+- (NSMutableArray *)operationAdd
+{
+    NSMutableArray *rowsOfResultArray = [NSMutableArray new];
+    NSMutableArray *row = [NSMutableArray new];
+    
+    for (int i = 0; i < self.matrixSize; ++i) {
+        for (int j = 0; j < self.matrixSize; ++j) {
+            // one row operation
+            // value of matrix A
+            UITextField *textFieldA =
+            [[self.rowsOfAllMatrix objectAtIndex:(i + MATRIX_A_INDEX * self.matrixSize)]objectAtIndex:j];
+            int valueA = [[textFieldA text] intValue];
+            
+            // value of matrix B
+            UITextField *textFieldB =
+            [[self.rowsOfAllMatrix objectAtIndex:(i + MATRIX_B_INDEX * self.matrixSize)] objectAtIndex:j];
+            int valueB = [[textFieldB text] intValue];
+            
+            [row addObject:[[NSNumber alloc] initWithInt:valueA + valueB]];
+        }
+        [rowsOfResultArray addObject:row];
+        row = [NSMutableArray new];
+    }
+    
+    return rowsOfResultArray;
+}
+
+- (NSMutableArray *)operationSub
+{
+    NSMutableArray *rowsOfResultArray = [NSMutableArray new];
+    NSMutableArray *row = [NSMutableArray new];
+    
+    for (int i = 0; i < self.matrixSize; ++i) {
+        for (int j = 0; j < self.matrixSize; ++j) {
+            // one row operation
+            // value of matrix A
+            UITextField *textFieldA =
+            [[self.rowsOfAllMatrix objectAtIndex:(i + MATRIX_A_INDEX * self.matrixSize)]objectAtIndex:j];
+            int valueA = [[textFieldA text] intValue];
+            
+            // value of matrix B
+            UITextField *textFieldB =
+            [[self.rowsOfAllMatrix objectAtIndex:(i + MATRIX_B_INDEX * self.matrixSize)] objectAtIndex:j];
+            int valueB = [[textFieldB text] intValue];
+            
+            [row addObject:[[NSNumber alloc] initWithInt:valueA - valueB]];
+        }
+        [rowsOfResultArray addObject:row];
+        row = [NSMutableArray new];
+    }
+    
+    return rowsOfResultArray;
+
+}
+
+- (NSMutableArray *)operationMul
+{
+    
+}
+*/
 
 - (IBAction)reset:(UIButton *)sender {
     // I told the value changed..it wasn't.
     [self matrixSizeChanged: self.stepper];
 }
+
 
 
 @end
