@@ -8,6 +8,8 @@
 
 #import "MatrixViewController.h"
 #import "ResultViewController.h"
+#import "HeaderViewController.h"
+#import "CollectionCell.h"
 
 #include "NMatrix.h"
 
@@ -27,8 +29,10 @@ enum MATRIX_OPERATION {
 #define MATRIX_A_INDEX 0
 #define MATRIX_B_INDEX 1
 
+#define WIDTH_OF_TEXTFIELD 55
 
-@synthesize matrixSize = _matrixSize;
+
+//@synthesize matrixSize = _matrixSize;
 
 - (void)viewDidLoad
 {
@@ -39,16 +43,13 @@ enum MATRIX_OPERATION {
     // init the matrix size with 1
     self.matrixSize = 3;
 
-    [self labelMatrixSize].text = [[NSString alloc] initWithFormat:@"Matrix Size: %d X %d", self.matrixSize, self.matrixSize];
+    self.sectionNow = 0;
     
     self.rowsOfAllMatrix = [NSMutableArray new];
+    self.oneRowInMatrix = [NSMutableArray new];
+
     
-    // hide the textFields locator
-    self.onePointOneOfMatrixA.hidden = YES;
-    self.onePointOneOfMatrixB.hidden = YES;
-    self.onePointOneOfMatrixResult.hidden = YES;
-    
-    
+
     // init the segmented control options
     [self.segmentedControl removeAllSegments];
     [self.segmentedControl insertSegmentWithTitle:@"+" atIndex:OPERATION_ADD animated:YES];
@@ -58,11 +59,10 @@ enum MATRIX_OPERATION {
     // operation add default selected
     [self.segmentedControl setSelectedSegmentIndex:OPERATION_ADD];
     
-    
+ 
     // add observer to catch the keyboard hide notification
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
-     
-    [self drawFields];
+
 }
 
 - (void)keyboardDidHide:(NSNotification *)notification
@@ -91,11 +91,13 @@ enum MATRIX_OPERATION {
     return NO;
 }
 
-- (IBAction)matrixSizeChanged:(UIStepper *)sender {
+
+- (IBAction)matrixSizeChange:(UIStepper *)sender {
     
     self.matrixSize = [sender value];
     
     // remove all textFields in array
+    /*
     int rowsCount = self.rowsOfAllMatrix.count;
     int nObjectsInOneRow = [[self.rowsOfAllMatrix objectAtIndex:0] count];
     
@@ -111,74 +113,10 @@ enum MATRIX_OPERATION {
     self.rowsOfAllMatrix = [NSMutableArray new];
     
     [self labelMatrixSize].text = [[NSString alloc] initWithFormat:@"Matrix Size: %d X %d", self.matrixSize, self.matrixSize];
-    
-    [self drawFields];
+    */
+    // [self drawFields];
 }
 
-/*
- draw a matrix of textFields, 
- textField(1, 1) will locate in rect passed in.
- */
-- (void)drawMatrixFields:(CGRect *)pRect
-{
-    NSMutableArray *aRowOfTextFieldsOfMatrix = [NSMutableArray new];
-    
-    CGRect newFrame = *pRect;
-    UITextField *newTextField = nil;
-    
-    for (int y = 0; y < self.matrixSize; ++y) {
-        // make move
-        newFrame.origin.y = pRect->origin.y;
-        newFrame.origin.y += y * pRect->size.height;
-        
-        for (int x = 0; x < self.matrixSize; ++x) {
-            
-            newTextField = [[UITextField alloc] initWithFrame:*pRect];
-            
-            // set delegate for events capturing
-            newTextField.delegate = self;
-            
-            // make move
-            newFrame.origin.x = pRect->origin.x;
-            newFrame.origin.x += x * pRect->size.width;
-            
-            // change keyboard style
-            newTextField.returnKeyType = UIReturnKeyDone;
-            newTextField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-            
-            [newTextField setFrame:newFrame];
-            [newTextField setBorderStyle:UITextBorderStyleRoundedRect];
-            
-            [aRowOfTextFieldsOfMatrix addObject:newTextField];
-            
-            [self.view addSubview:newTextField];
-        }
-        
-        // add one row to rowsArray
-        [self.rowsOfAllMatrix addObject:aRowOfTextFieldsOfMatrix];
-        aRowOfTextFieldsOfMatrix = [NSMutableArray new];
-    }
-
-}
-
-
--(void)drawFields
-{
-    // generate textfields according to matrix size
-    
-    
-    // generate matrix A
-    CGRect frameOfMatrixA11 = CGRectMake(5, 94, 55, 30);
-    [self drawMatrixFields:&frameOfMatrixA11];
-    
-    CGRect frameOfMatrixB11 = CGRectMake(5, 250, 55, 30);
-    [self drawMatrixFields:&frameOfMatrixB11];
-
-    /*
-    CGRect frameOfMatrixResult11 = CGRectMake(5, 369, 30, 30);
-    [self drawMatrixFields:&frameOfMatrixResult11];
-     */
-}
 
 
 /*
@@ -224,6 +162,7 @@ enum MATRIX_OPERATION {
 /*
  dispatch operations
  */
+
 - (IBAction)calculate:(UIButton *)sender {
     
     ResultViewController *resultView = [self.storyboard  instantiateViewControllerWithIdentifier:@"ResultView"];
@@ -248,6 +187,8 @@ enum MATRIX_OPERATION {
             [[self.rowsOfAllMatrix objectAtIndex:(i + MATRIX_B_INDEX * self.matrixSize)] objectAtIndex:j];
             matrixB->data[i][j] = [[textFieldB text] intValue];
             
+            
+            NSLog(@"i = %d, j = %d count rows = %d \n", i, j, self.rowsOfAllMatrix.count);
         }
     }
     
@@ -282,74 +223,85 @@ enum MATRIX_OPERATION {
 
 
 
-/*
-
-- (NSMutableArray *)operationAdd
-{
-    NSMutableArray *rowsOfResultArray = [NSMutableArray new];
-    NSMutableArray *row = [NSMutableArray new];
-    
-    for (int i = 0; i < self.matrixSize; ++i) {
-        for (int j = 0; j < self.matrixSize; ++j) {
-            // one row operation
-            // value of matrix A
-            UITextField *textFieldA =
-            [[self.rowsOfAllMatrix objectAtIndex:(i + MATRIX_A_INDEX * self.matrixSize)]objectAtIndex:j];
-            int valueA = [[textFieldA text] intValue];
-            
-            // value of matrix B
-            UITextField *textFieldB =
-            [[self.rowsOfAllMatrix objectAtIndex:(i + MATRIX_B_INDEX * self.matrixSize)] objectAtIndex:j];
-            int valueB = [[textFieldB text] intValue];
-            
-            [row addObject:[[NSNumber alloc] initWithInt:valueA + valueB]];
-        }
-        [rowsOfResultArray addObject:row];
-        row = [NSMutableArray new];
-    }
-    
-    return rowsOfResultArray;
-}
-
-- (NSMutableArray *)operationSub
-{
-    NSMutableArray *rowsOfResultArray = [NSMutableArray new];
-    NSMutableArray *row = [NSMutableArray new];
-    
-    for (int i = 0; i < self.matrixSize; ++i) {
-        for (int j = 0; j < self.matrixSize; ++j) {
-            // one row operation
-            // value of matrix A
-            UITextField *textFieldA =
-            [[self.rowsOfAllMatrix objectAtIndex:(i + MATRIX_A_INDEX * self.matrixSize)]objectAtIndex:j];
-            int valueA = [[textFieldA text] intValue];
-            
-            // value of matrix B
-            UITextField *textFieldB =
-            [[self.rowsOfAllMatrix objectAtIndex:(i + MATRIX_B_INDEX * self.matrixSize)] objectAtIndex:j];
-            int valueB = [[textFieldB text] intValue];
-            
-            [row addObject:[[NSNumber alloc] initWithInt:valueA - valueB]];
-        }
-        [rowsOfResultArray addObject:row];
-        row = [NSMutableArray new];
-    }
-    
-    return rowsOfResultArray;
-
-}
-
-- (NSMutableArray *)operationMul
-{
-    
-}
-*/
-
 - (IBAction)reset:(UIButton *)sender {
     // I told the value changed..it wasn't.
-    [self matrixSizeChanged: self.stepper];
+    // [self matrixSizeChanged: self.stepper];
 }
 
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return self.matrixSize;
+}
+
+// collection view delegates
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return self.matrixSize * 3;
+    
+}
+
+// callback for every cell
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    CollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FieldCell" forIndexPath:indexPath];
+    
+    if (!cell)
+        cell = [CollectionCell new];
+
+    cell.textField.delegate = self;
+    
+    // change keyboard style
+    cell.textField.returnKeyType = UIReturnKeyDone;
+    cell.textField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+    
+    if (indexPath.section != self.sectionNow) {
+        self.sectionNow++;
+        [self.rowsOfAllMatrix addObject: self.oneRowInMatrix];
+        self.oneRowInMatrix = [NSMutableArray new];
+    }
+    
+    NSLog(@"section = %d \n", indexPath.section);
+    
+    [self.oneRowInMatrix addObject:cell.textField];
+    
+    return cell;
+}
+
+/*
+ size definition in custom cell class.
+ */ 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(55, 30);
+}
+
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+
+    UIEdgeInsets edgeInset = {0};
+    
+    // space in each matrix
+    if (section % self.matrixSize == 0) {
+        edgeInset = UIEdgeInsetsMake(30, 2, 5, 2);
+    } else {
+        edgeInset = UIEdgeInsetsMake(5, 2, 5, 2);
+    }
+    
+    return edgeInset;
+}
+
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
 
 
 @end
